@@ -1,12 +1,14 @@
 import { Link } from "expo-router";
-import { StatusBar, Text, View } from "react-native";
+import { SafeAreaView, StatusBar, Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View className="flex-1 bg-white items-center justify-center">
-      <StatusBar barStyle={"default"} />
-      <Text className="text-3xl font-pblack">Appname</Text>
-      <Link href="/home" className="text-blue-500">Go to home</Link>
-    </View>
+    <SafeAreaView className="bg-primary h-full">
+      <View className="flex-1 items-center justify-center">
+        <StatusBar barStyle={"default"} />
+        <Text className="text-3xl text-white font-plight">Appname</Text>
+        <Link href="/home" className="text-blue-500">Go to home</Link>
+      </View>
+    </SafeAreaView>
   );
 }
