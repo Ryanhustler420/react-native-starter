@@ -5,7 +5,7 @@ export default function Index() {
   return (
     <View className="flex-1 bg-white items-center justify-center">
       <StatusBar barStyle={"default"} />
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text className="text-3xl font-pblack">Appname</Text>
       <Link href="/profile" className="text-blue-500">Go to profile</Link>
     </View>
   );
