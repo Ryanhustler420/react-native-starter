@@ -10,7 +10,13 @@ interface GlobalContextType {
 }
 
 // Create a context with a default value
-const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
+const GlobalContext = createContext<GlobalContextType>({
+  isLogged: false,
+  setIsLogged: () => {},
+  user: null,
+  setUser: () => {},
+  loading: true,
+});
 export const useGlobalContext = () => useContext(GlobalContext);
 
 // Define a provider component
