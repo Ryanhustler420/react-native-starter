@@ -6,7 +6,7 @@ export default function Index() {
     <View className="flex-1 bg-white items-center justify-center">
       <StatusBar barStyle={"default"} />
       <Text className="text-3xl font-pblack">Appname</Text>
-      <Link href="/profile" className="text-blue-500">Go to profile</Link>
+      <Link href="/home" className="text-blue-500">Go to home</Link>
     </View>
   );
 }
