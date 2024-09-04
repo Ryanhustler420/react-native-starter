@@ -1,6 +1,8 @@
-import { View, ActivityIndicator, Dimensions, Platform } from "react-native";
+import { View, ActivityIndicator, Dimensions, Platform, useColorScheme } from "react-native";
 
 const Loader: React.FC<{ isLoading: boolean }> = ({ isLoading }) => {
+  const colorScheme = useColorScheme();
+
   const osName = Platform.OS;
   const screenHeight = Dimensions.get("screen").height;
 
@@ -8,14 +10,14 @@ const Loader: React.FC<{ isLoading: boolean }> = ({ isLoading }) => {
 
   return (
     <View
-      className="absolute flex justify-center items-center w-full h-full bg-primary/60 z-10"
+      className="absolute flex justify-center items-center w-full h-full z-10"
       style={{
         height: screenHeight,
       }}
     >
       <ActivityIndicator
         animating={isLoading}
-        color="#fff"
+        color={colorScheme == "dark" ? "#fff" : "#000"}
         size={osName === "ios" ? "large" : 50}
       />
     </View>

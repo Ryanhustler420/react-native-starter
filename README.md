@@ -10,3 +10,5 @@ Make sure you're using `NodeJS >= 20`.
   - npx tailwindcss init
 - [Redux Toolkit](https://redux-toolkit.js.org/tutorials/quick-start)
   - npm install @reduxjs/toolkit react-redux
+- [React Native Async Storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage)
+  - npm i @react-native-async-storage/async-storage

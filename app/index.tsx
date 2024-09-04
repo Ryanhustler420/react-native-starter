@@ -1,25 +1,27 @@
-import CustomButton from "@/components/CustomButton";
-import { Link, router } from "expo-router";
-import { SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
+import { useEffect } from "react";
+import { router } from "expo-router";
+import Loader from "@/components/Loader";
+import { SafeAreaView } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Index() {
+
+  useEffect(() => {
+    const check = async () => {
+      const storedAuthInfo = await AsyncStorage.getItem("userData");
+      const isAuthenticated = true;
+      if (isAuthenticated) {
+        setTimeout(() => router.replace("/(tabs)/home"), 1000);
+      } else {
+        setTimeout(() => router.replace("/sign-in"), 1000);
+      }
+    }
+    check();
+  }, []);
+
   return (
-    <SafeAreaView className="dark:bg-primary h-full">
-      <ScrollView 
-        contentContainerStyle={{ height: '100%' }}
-        automaticallyAdjustKeyboardInsets={true}
-      >
-        <View className="flex-1 items-center justify-center">
-          <StatusBar barStyle={"default"} />
-          <Text className="text-3xl dark:text-white font-plight">Appname</Text>
-          <Link href="/home" className="text-blue-500">Go to home</Link>
-          <CustomButton
-            title="Home"
-            handlePress={() => router.push("/home")}
-            containerStyle="w-full mt-7"
-          />
-        </View>
-      </ScrollView>
+    <SafeAreaView className="h-full">
+      <Loader isLoading />
     </SafeAreaView>
   );
 }
