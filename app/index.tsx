@@ -1,4 +1,5 @@
-import { Link } from "expo-router";
+import CustomButton from "@/components/CustomButton";
+import { Link, router } from "expo-router";
 import { SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
 
 export default function Index() {
@@ -9,6 +10,11 @@ export default function Index() {
           <StatusBar barStyle={"default"} />
           <Text className="text-3xl text-white font-plight">Appname</Text>
           <Link href="/home" className="text-blue-500">Go to home</Link>
+          <CustomButton
+            title="Home"
+            handlePress={() => router.push("/home")}
+            containerStyle="w-full mt-7"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
