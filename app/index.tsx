@@ -5,7 +5,10 @@ import { SafeAreaView, ScrollView, StatusBar, Text, View } from "react-native";
 export default function Index() {
   return (
     <SafeAreaView className="dark:bg-primary h-full">
-      <ScrollView contentContainerStyle={{ height: '100%' }}>
+      <ScrollView 
+        contentContainerStyle={{ height: '100%' }}
+        automaticallyAdjustKeyboardInsets={true}
+      >
         <View className="flex-1 items-center justify-center">
           <StatusBar barStyle={"default"} />
           <Text className="text-3xl dark:text-white font-plight">Appname</Text>
